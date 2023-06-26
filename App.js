@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 
 import { StatusBar } from 'expo-status-bar';
-import { Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -35,21 +34,21 @@ function DrawerNavigator() {
       }}
     >
       <Drawer.Screen
-        name='Categories'
+        name="Categories"
         component={CategoriesScreen}
         options={{
           title: 'All Categories',
           drawerIcon: ({ color, size }) => (
-            <Ionicons name='list' color={color} size={size} />
+            <Ionicons name="list" color={color} size={size} />
           ),
         }}
       />
       <Drawer.Screen
-        name='Favorites'
+        name="Favorites"
         component={FavoritesScreen}
         options={{
           drawerIcon: ({ color, size }) => (
-            <Ionicons name='star' color={color} size={size} />
+            <Ionicons name="star" color={color} size={size} />
           ),
         }}
       />
@@ -60,7 +59,7 @@ function DrawerNavigator() {
 export default function App() {
   return (
     <>
-      <StatusBar style='light' />
+      <StatusBar style="light" />
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -74,14 +73,14 @@ export default function App() {
           }}
         >
           <Stack.Screen
-            name='Drawer'
+            name="Drawer"
             component={DrawerNavigator}
             options={{
               headerShown: false,
             }}
           />
           <Stack.Screen
-            name='MealsOverview'
+            name="MealsOverview"
             component={MealsOverviewScreen}
             options={({ route, navigation }) => {
               const catId = route.params.categoryId;
@@ -91,7 +90,7 @@ export default function App() {
             }}
           />
           <Stack.Screen
-            name='MealDetail'
+            name="MealDetail"
             component={MealDetailScreen}
             options={{ title: 'About the Meal' }}
           />
